@@ -6,6 +6,8 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
+  Platform,
+  StatusBar,
 } from "react-native";
 
 import FontAwesome from "@expo/vector-icons/FontAwesome";
@@ -25,7 +27,11 @@ export default function App() {
         backgroundColor: "black",
       }}
     >
-      <ScrollView>
+      <ScrollView
+        style={{
+          paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+        }}
+      >
         <View style={styles.header}>
           <Image source={logo} style={styles.logo} />
         </View>
