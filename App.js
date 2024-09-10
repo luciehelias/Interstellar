@@ -7,8 +7,9 @@ import {
   TouchableOpacity,
   ScrollView,
   Platform,
-  StatusBar,
 } from "react-native";
+
+import { StatusBar } from "expo-status-bar";
 
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
@@ -27,6 +28,7 @@ export default function App() {
         backgroundColor: "black",
       }}
     >
+      <StatusBar style="light"></StatusBar>
       <ScrollView
         style={{
           paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
